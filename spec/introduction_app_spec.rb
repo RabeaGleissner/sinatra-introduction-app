@@ -12,10 +12,10 @@ describe 'IntroductionApp' do
     IntroductionApp.new
   end
 
-  it "says hello" do
+  it "gets the homepage" do
     get '/'
     expect(last_response).to be_ok
-    expect(last_response.body).to eq('Hello ')
+    expect(last_response.body).to include("Welcome to IntroduceME")
   end
 end
 

@@ -1,0 +1,11 @@
+!!!
+%html
+  %head
+    %title IntroduceME
+  %body
+    %h1 Welcome to IntroduceME
+    %p Please enter your name:
+    %form{:action => "country", :method => "post"}
+      %input{:name => "name", :type => "text"}
+      %button{:type => "submit"} NEXT
+
