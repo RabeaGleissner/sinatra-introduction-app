@@ -6,11 +6,19 @@
     %h1 IntroduceME
     %p
       = "#{@animal}???? Well, each to their own..."
-    %p Here is a summary of the data you entered:
+    %h2 Here is a summary of the data you entered:
     %ul
       %li
-        = @name
+        %p
+          Name:
+          = @name
       %li
-        = @country
+        %p
+          Country:
+          = @country
       %li
-        = @animal
+        %p
+          Animal:
+          = @animal
+      %p
+        %a{:href => "/"} From the top
