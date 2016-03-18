@@ -1,8 +1,9 @@
 require 'sinatra'
 require 'haml'
+require_relative 'person'
 
 class IntroductionApp < Sinatra::Base
-  enable :sessions
+  use Rack::Session::Pool
 
   get "/" do
     haml :home
@@ -37,6 +38,8 @@ class IntroductionApp < Sinatra::Base
     @name = session["name"]
     @country = session["country"]
     @animal = session["animal"]
+    session[:person] = Person.new(@name, @country, @animal)
+    @person = session[:person]
     haml :summary
   end
 end
