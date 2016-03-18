@@ -1,18 +1,11 @@
-!!!
-%html
-  %head
-    %title IntroduceME
-  %body
-    %h1 IntroduceME
+%p
+  = "A #{@animal}???? Well, each to their own..."
+%h2 Data summary
+- @people.each do |person|
+  %li
     %p
-      = "A #{@animal}???? Well, each to their own..."
-    %h2 Here is a summary of the data you entered:
-    - @people.each do |person|
-      %li
-        %p
-          = "Name: #{person.name} | "
-          = "Country of origin: #{person.country} | "
-          = "Spirit animal: #{person.animal}"
-
+      = "Name: #{person.name} | "
+      = "Country of origin: #{person.country} | "
+      = "Spirit animal: #{person.animal}"
     %p
       %a{:href => "/"} Add another user

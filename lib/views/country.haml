@@ -1,13 +1,7 @@
-!!!
-%html
-  %head
-    %title IntroduceME
-  %body
-    %h1 IntroduceME
-    %p
-      = "Thank you #{@name}!"
-    %p Now please enter your country of birth:
-    %form{ :action => "country", :method => "post"}
-      %input{:name => "country", :type => "text"}
-      %button{:type => "submit"} NEXT
+%p
+  = "Thank you #{@name}!"
+  %p Now please enter your country of birth:
+  %form{ :action => "country", :method => "post"}
+    %input{:name => "country", :type => "text"}
+    %button{:type => "submit"} NEXT
 

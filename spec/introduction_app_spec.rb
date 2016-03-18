@@ -15,7 +15,7 @@ describe 'IntroductionApp' do
   it "displays the homepage" do
     get '/'
     expect(last_response).to be_ok
-    expect(last_response.body).to include("Welcome to IntroduceME")
+    expect(last_response.body).to include("Welcome to IntroduceMANN")
   end
 
   it "redirects a post request to /name to /country" do
