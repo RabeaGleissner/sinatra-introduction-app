@@ -1,11 +1,11 @@
 %p
   = "A #{@animal}???? Well, each to their own..."
-%h2 Data summary
+%h2 Let me introduce you to some people I have recently met
 - @people.each do |person|
   %li
     %p
       = "Name: #{person.name} | "
       = "Country of origin: #{person.country} | "
       = "Spirit animal: #{person.animal}"
-    %p
-      %a{:href => "/"} Add another user
+%p
+  %a{:href => "/"} Add another user

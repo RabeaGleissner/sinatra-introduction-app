@@ -44,4 +44,9 @@ class IntroductionApp < Sinatra::Base
    @people = @@people
    haml :summary
   end
+
+  get '/styles/styles.css' do
+    puts "hello ***************"
+      scss :styles
+  end
 end
