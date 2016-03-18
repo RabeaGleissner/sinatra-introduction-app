@@ -5,6 +5,10 @@ require_relative 'person'
 class IntroductionApp < Sinatra::Base
   use Rack::Session::Pool
 
+  configure do
+   @@people ||= []
+  end
+
   get "/" do
     haml :home
   end
@@ -35,11 +39,9 @@ class IntroductionApp < Sinatra::Base
   end
 
   get "/summary" do
-    @name = session["name"]
-    @country = session["country"]
-    @animal = session["animal"]
-    session[:person] = Person.new(@name, @country, @animal)
-    @person = session[:person]
-    haml :summary
+   @@people << Person.new(session["name"], session["country"], session["animal"])
+   puts "#{@@people.length}"
+   @people = @@people
+   haml :summary
   end
 end

@@ -7,18 +7,12 @@
     %p
       = "A #{@animal}???? Well, each to their own..."
     %h2 Here is a summary of the data you entered:
-    %ul
+    - @people.each do |person|
       %li
         %p
-          Name:
-          = @person.name
-      %li
-        %p
-          Country:
-          = @person.country
-      %li
-        %p
-          Animal:
-          = @person.animal
-      %p
-        %a{:href => "/"} Add another user
+          = "Name: #{person.name} | "
+          = "Country of origin: #{person.country} | "
+          = "Spirit animal: #{person.animal}"
+
+    %p
+      %a{:href => "/"} Add another user
