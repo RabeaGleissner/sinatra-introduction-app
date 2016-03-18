@@ -6,7 +6,7 @@ class IntroductionApp < Sinatra::Base
   use Rack::Session::Pool
 
   configure do
-   @@people ||= []
+    @@people ||= []
   end
 
   get "/" do
@@ -39,14 +39,13 @@ class IntroductionApp < Sinatra::Base
   end
 
   get "/summary" do
-   @@people << Person.new(session["name"], session["country"], session["animal"])
-   puts "#{@@people.length}"
-   @people = @@people
-   haml :summary
+    @animal = session["animal"]
+    @@people << Person.new(session["name"], session["country"], @animal)
+    @people = @@people
+    haml :summary
   end
 
   get '/styles/styles.css' do
-    puts "hello ***************"
-      scss :styles
+    scss :styles
   end
 end

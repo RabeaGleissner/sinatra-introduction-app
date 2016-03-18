@@ -1,11 +1,12 @@
-%p
+%p.repeat
   = "A #{@animal}???? Well, each to their own..."
-%h2 Let me introduce you to some people I have recently met
-- @people.each do |person|
-  %li
-    %p
-      = "Name: #{person.name} | "
-      = "Country of origin: #{person.country} | "
-      = "Spirit animal: #{person.animal}"
+%p Now let me introduce you to some people I have recently met
+%ul
+  - @people.each do |person|
+    %li
+      %p
+        = "#{person.name}  "
+        = "with a #{person.animal} "
+        = "from #{person.country}"
 %p
-  %a{:href => "/"} Add another user
+  %a.add-more{:href => "/"} Add another user
