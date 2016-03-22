@@ -4,7 +4,6 @@ require_relative '../lib/introduction_app'
 require 'rspec'
 require 'rack/test'
 
-
 describe 'IntroductionApp' do
   include Rack::Test::Methods
 
@@ -33,6 +32,7 @@ describe 'IntroductionApp' do
     post '/name', 'name' => 'Jon'
     get '/country'
     expect(last_response.body).to include 'Jon'
+    expect(last_request.env['rack.session']['name']).to eql('Jon')
   end
 
   it "displays country page with a comment about name" do
