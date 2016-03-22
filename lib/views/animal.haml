@@ -1,6 +1,9 @@
 %p.repeat
   = "#{@country} is a wonderful country!"
 %p Lastly, please tell me what your spirit animal is:
-%form{ :action => "animal", :method => "post"}
+%form{ :action => "/animal", :method => "post"}
   %input{:name => "animal", :type => "text"}
   %button{:type => "submit"} NEXT
+- if @error_message == true
+  %p.error
+    = "Please enter your spirit animal to continue!"

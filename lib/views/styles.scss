@@ -96,6 +96,7 @@ input {
   border-radius: 2px;
   font-weight: bold;
   vertical-align: middle;
+  box-shadow: 4px 5px 8px grey;
 }
 
 .add-more:hover {
@@ -108,4 +109,9 @@ input {
 
 ul {
   margin-bottom: 40px;
+}
+
+.error {
+  background-color: lightpink;
+  padding: 15px;
 }
